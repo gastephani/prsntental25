@@ -5,15 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Para Sarah ❤️</title>
 
-<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
   min-height: 100vh;
@@ -34,7 +29,7 @@ body {
   padding: 20px;
 }
 
-/* LOGIN */
+/* PERGUNTAS */
 .login-box {
   background: rgba(255,255,255,0.4);
   backdrop-filter: blur(8px);
@@ -48,7 +43,7 @@ body {
 }
 
 .login-box h1 {
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   margin-bottom: 22px;
 }
 
@@ -88,18 +83,6 @@ body {
   font-family: 'Playfair Display', serif;
 }
 
-.content::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 160px;
-  background: linear-gradient(transparent, rgba(255,255,255,0.95));
-  border-radius: 0 0 28px 28px;
-  pointer-events: none;
-}
-
 .content h2 {
   text-align: center;
   margin-bottom: 32px;
@@ -111,8 +94,8 @@ body {
   font-size: 1.08rem;
   line-height: 1.9;
   letter-spacing: 0.02em;
-  position: relative;
   padding-left: 14px;
+  position: relative;
 }
 
 .content p::before {
@@ -127,25 +110,15 @@ body {
   opacity: 0.6;
 }
 
-/* Drop Cap primeira letra */
 .content p:first-of-type::first-letter {
   float: left;
   font-size: 3.4rem;
-  line-height: 1;
   margin-right: 10px;
   margin-top: 6px;
   font-weight: 600;
   color: #c89b2c;
 }
 
-/* Itálico suave em blocos emocionais */
-.content p:nth-of-type(1),
-.content p:nth-of-type(6),
-.content p:nth-of-type(10) {
-  font-style: italic;
-}
-
-/* DESTAQUE */
 .highlight {
   text-align: center;
   font-weight: 600;
@@ -154,15 +127,12 @@ body {
   letter-spacing: 0.08em;
 }
 
-/* ASSINATURA */
 .signature {
   margin-top: 46px;
-  font-weight: 500;
   text-align: right;
   font-style: italic;
 }
 
-/* BOTÃO */
 .gift-btn {
   margin: 42px auto 10px;
   display: block;
@@ -173,33 +143,22 @@ body {
   background: linear-gradient(135deg, #f2c94c, #f2994a);
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
 
-/* TICKET */
 .ticket {
   display: none;
   margin-top: 46px;
   background: rgba(255,255,255,0.65);
   border-radius: 22px;
   padding: 28px;
-  font-size: 1.08rem;
-  animation: fadeIn 1.4s ease;
-  box-shadow: inset 0 0 20px rgba(255,255,255,0.6);
 }
 
-.ticket p {
-  margin-bottom: 8px;
-}
-
-/* FOTO */
 .ticket-photo {
   width: 96px;
   height: 96px;
   margin: 0 auto 20px;
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.3);
 }
 
 .ticket-photo img {
@@ -208,11 +167,8 @@ body {
   object-fit: cover;
 }
 
-audio {
-  display: none;
-}
+audio { display: none; }
 
-/* ANIMAÇÕES */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -222,117 +178,124 @@ audio {
   from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
-@media (min-width: 768px) {
-  .content {
-    padding: 56px 60px 100px;
-  }
-  .content p {
-    font-size: 1.12rem;
-  }
-}
 </style>
 </head>
 
 <body>
 <div class="overlay">
 
-  <!-- LOGIN -->
-  <div class="login-box" id="loginBox">
-    <h1>Qual o nome do seu namorado?</h1>
-    <input type="text" id="password" placeholder="Digite aqui…">
-    <button onclick="checkPassword()">Entrar</button>
+<!-- PERGUNTAS -->
+<div class="login-box" id="questionBox">
+  <h1 id="question">Qual o nome do seu namorado?</h1>
+  <input type="text" id="answer" placeholder="Digite aqui…">
+  <button onclick="nextQuestion()">Continuar</button>
+</div>
+
+<!-- CONTEÚDO FINAL -->
+<div class="content" id="content">
+  <h2>Sarah,</h2>
+
+  <p>O Natal sempre me faz pensar no que realmente importa. Não em presentes ou datas, mas nas pessoas que atravessam os nossos dias e deixam tudo mais significativo e pessoas com quem gostaríamos de estar e com as tradições que são criadas.</p>
+
+  <p>Você é assim pra mim. Sua presença soma, traz leveza, faz bem. Mesmo quando a rotina fica corrida, aparecem mil reuniões e entregas ou quando a distância aparece, você continua sendo alguém que eu escolho ter por perto, nem que seja entre um meet e outro.</p>
+
+  <p>Eu gosto muito da forma como a gente tem construido o que temos. Sem pressa, sem cobrança, sem forçar nada. A gente conversa, se entende, ri das coisas, aprende junto, tem cuidado, respeito, segurança e verdade nisso e eu valorizo muito.</p>
+
+  <p>Saiba que com você, os dias ficam mais simples. Não porque tudo muda, mas porque dividir a vida com alguém que faz sentido deixa tudo mais claro. Até as coisas comuns ganham outro peso quando são compartilhadas, um pãozinho na padaria, uma ida no mercado, descer com o tinky.</p>
+
+  <p>Estar com você me faz bem de um jeito tranquilo, não é sobre intensidade o tempo todo (apesar de sabermos como deixar as coisas divertidas) é sobre paz, sobre sentir que estou no lugar certo, vivendo algo que vale a pena e que eu posso colocar energia e esforço pra construir algo sólido.</p>
+
+  <p>Esse ano me ensinou bastante sobre escolhas, escolher estar, escolher cuidar, escolher o que faz bem de verdade. E amar você tem sido isso, uma escolha consciente, tranquila e segura, construída no dia a dia.</p>
+
+  <p>Escolho construir algo de verdade, com as NOSSAS tradições, com o NOSSO jeito de fazer dar certo, dividindo sonhos, objetivos e tudo de mais bonito e sincero que pudermos fazer por NóS.</p>
+
+  <p>Quando você me contou da viagem, eu senti saudade quase que imediatamente, porque realmente estamos em um momento muito gostoso de ser vivido. Mas junto com isso veio uma vontade grande de participar mais do seu mundo.</p>
+
+  <p>Eu não queria apenas ouvir tudo depois ou viver isso à distância. Eu queria poder participar desse momento com você, conhecer tudo sobre de onde veio, as pessoas que são importantes, seus lugares favoritos e tudo que de alguma maneira tornam ai especial para você</p>
+
+  <p>Eu pensei bastante antes de tomar essa decisão e percebi que estar com você é algo que faz sentido agora e que eu quero viver com presença.</p>
+
+  <p>Por isso, nesse Natal, meu presente não é algo que se embrulha e sim o que eu mais gosto de oferecer e receber.</p>
+
+  <div class="highlight">
+    É tempo.<br>
+    É intenção.<br>
+    É escolha.
   </div>
 
-  <!-- CONTEÚDO -->
-  <div class="content" id="content">
-    <h2>Sarah,</h2>
+  <p>E no dia 09 de janeiro, eu vou. Vou pra te encontrar. Pra dividir dias, conversas, momentos simples e reais. Pra viver de perto mais um capítulo da nossa história, do jeito que a gente constrói tudo: com calma, verdade e carinho.</p>
 
-    <p>O Natal sempre me faz pensar no que realmente importa. Não em presentes ou datas, mas nas pessoas que atravessam os nossos dias e deixam tudo mais significativo e pessoas com quem gostaríamos de estar e com as tradições que são criadas.</p>
+  <p>E se tem algo que eu desejo pra esse Natal, é que você sinta, em cada palavra dessa carta, o quanto você é importante pra mim, o quanto eu faço questão, e o quanto eu escolho você e Tinky, hoje e nos próximos capítulos que a gente ainda vai escrever, porque a gente vai!</p>
 
-    <p>Você é assim pra mim. Sua presença soma, traz leveza, faz bem. Mesmo quando a rotina fica corrida, aparecem mil reuniões e entregas ou quando a distância aparece, você continua sendo alguém que eu escolho ter por perto, nem que seja entre um meet e outro.</p>
+  <button class="gift-btn" onclick="document.getElementById('ticket').style.display='block'">Aceitar presente 🎁</button>
 
-    <p>Eu gosto muito da forma como a gente tem construido o que temos. Sem pressa, sem cobrança, sem forçar nada. A gente conversa, se entende, ri das coisas, aprende junto, tem cuidado, respeito, segurança e verdade nisso e eu valorizo muito.</p>
-
-    <p>Saiba que com você, os dias ficam mais simples. Não porque tudo muda, mas porque dividir a vida com alguém que faz sentido deixa tudo mais claro. Até as coisas comuns ganham outro peso quando são compartilhadas, um pãozinho na padaria, uma ida no mercado, descer com o tinky.</p>
-
-    <p>Estar com você me faz bem de um jeito tranquilo, não é sobre intensidade o tempo todo (apesar de sabermos como deixar as coisas divertidas) é sobre paz, sobre sentir que estou no lugar certo, vivendo algo que vale a pena e que eu posso colocar energia e esforço pra construir algo sólido.</p>
-
-    <p>Esse ano me ensinou bastante sobre escolhas, escolher estar, escolher cuidar, escolher o que faz bem de verdade. E amar você tem sido isso, uma escolha consciente, tranquila e segura, construída no dia a dia.</p>
-
-     <p>Escolho construir algo de verdade, com as NOSSAS tradições, com o NOSSO jeito de fazer dar certo, dividindo sonhos, objetivos e tudo de mais bonito e sincero que pudermos fazer por NóS.</p>
-
-    <p>Quando você me contou da viagem, eu senti saudade quase que imediatamente, porque realmente estamos em um momento muito gostoso de ser vivido. Mas junto com isso veio uma vontade grande de participar mais do seu mundo.</p>
-
-    <p>Eu não queria apenas ouvir tudo depois ou viver isso à distância. Eu queria poder participar desse momento com você, conhecer tudo sobre de onde veio, as pessoas que são importantes, seus lugares favoritos e tudo que de alguma maneira tornam ai especial para você</p>
-
-    <p>Eu pensei bastante antes de tomar essa decisão e percebi que estar com você é algo que faz sentido agora e que eu quero viver com presença.</p>
-
-    <p>Por isso, nesse Natal, meu presente não é algo que se embrulha e sim o que eu mais gosto de oferecer e receber.</p>
-
-    <div class="highlight">
-      É tempo.<br>
-      É intenção.<br>
-      É escolha.
+  <div class="ticket" id="ticket">
+    <div class="ticket-photo">
+      <img src="ft_presente.jpeg">
     </div>
 
-    <p>E no dia 09 de janeiro, eu vou. Vou pra te encontrar. Pra dividir dias, conversas, momentos simples e reais. Pra viver de perto mais um capítulo da nossa história, do jeito que a gente constrói tudo: com calma, verdade e carinho.</p>
+    <p><strong>Passageiro:</strong> Gabriel</p>
+    <p><strong>Destino:</strong> (Salvador) Onde Sarah estiver</p>
+    <p><strong>Endereço:</strong> Av. General Severino Filho 712, Apto 911</p>
+    <p><strong>Data:</strong> 09/01/2026</p>
+    <p><strong>Horário de chegada:</strong> 10:00 AM</p>
+    <p><strong>Status:</strong> Confirmado</p>
 
-    <p>E se tem algo que eu desejo pra esse Natal, é que você sinta, em cada palavra dessa carta, o quanto você é importante pra mim, o quanto eu faço questão, e o quanto eu escolho você e Tinky, hoje e nos próximos capítulos que a gente ainda vai escrever, porque a gente vai!</p>
+    <p>Gabriel chegará no dia 09/01/2026 às 10h, estará esperando por Sarah e pelo Tinky 🐾, pronto para dividir dias simples, caminhadas, risadas e presença.</p>
+    <p>Bagagem: carinho, beijos, abraços, massagem, intenção, tempo e MUITA vontade de viver esse momento juntos.</p>
+  </div>
 
-    <button class="gift-btn" onclick="showTicket()">Aceitar presente 🎁</button>
-
-    <div class="ticket" id="ticket">
-      <div class="ticket-photo">
-        <img src="ft_presente.jpeg" alt="Foto do presente">
-      </div>
-
-      <p><strong>Passageiro:</strong> Gabriel</p>
-      <p><strong>Destino:</strong> (Salvador) Onde Sarah estiver</p>
-      <p><strong>Endereço:</strong> Av. General Severino Filho 712, Apto 911</p>
-      <p><strong>Data:</strong> 09/01/2026</p>
-      <p><strong>Horário de chegada:</strong> 10:00 AM</p>
-      <p><strong>Status:</strong> Confirmado</p>
-      <br>
-      <p>Gabriel chegará no dia 09/01/2026 às 10h, estará esperando por Sarah e pelo Tinky 🐾, pronto para dividir dias simples, caminhadas, risadas e presença.</p>
-      <p>Bagagem: carinho, beijos, abraços, massagem, intenção, tempo e MUITA vontade de viver esse momento juntos.</p>
-    </div>
-
-    <div class="signature">
-      Com carinho,<br>
-      Seu Gabriel.
-    </div>
-
-    <!-- ÁUDIO -->
-    <audio id="bgMusic" loop>
-      <source src="msc.mp3" type="audio/mpeg">
-    </audio>
-
+  <div class="signature">
+    Com carinho,<br>
+    Seu Gabriel.
   </div>
 </div>
 
-<script>
-function checkPassword() {
-  const value = document.getElementById("password").value.toLowerCase();
-  if (value === "gabriel") {
-    document.getElementById("loginBox").style.display = "none";
-    document.getElementById("content").style.display = "block";
+<audio id="bgMusic" loop>
+  <source src="msc.mp3" type="audio/mpeg">
+</audio>
 
-    const music = document.getElementById("bgMusic");
-    music.volume = 0.6;
-    music.play().catch(() => {
-      console.log('Autoplay bloqueado, aguarde interação');
-    });
-  } else {
-    alert("Resposta incorreta 💛");
-  }
+</div>
+
+<script>
+let step = 0;
+const questions = [
+  "Qual o nome do seu namorado?",
+  "Qual foi o dia mais importante do ano para nós?",
+  "Qual o meu suco favorito?",
+  "Que ano será o nosso primeiro Natal e réveillon juntos?"
+];
+
+function normalize(t) {
+  return t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 
-function showTicket() {
-  document.getElementById("ticket").style.display = "block";
+function nextQuestion() {
+  const v = normalize(document.getElementById("answer").value);
+
+  if (
+    (step === 0 && v.includes("gabriel")) ||
+    (step === 1 && v.includes("11")) ||
+    (step === 2 && v.includes("maracu")) ||
+    (step === 3 && v === "2026")
+  ) {
+    step++;
+    document.getElementById("answer").value = "";
+
+    if (step < questions.length) {
+      document.getElementById("question").innerText = questions[step];
+    } else {
+      document.getElementById("questionBox").style.display = "none";
+      document.getElementById("content").style.display = "block";
+      const music = document.getElementById("bgMusic");
+      music.volume = 0.6;
+      music.play();
+    }
+  } else {
+    alert("Pensa com carinho 💛");
+  }
 }
 </script>
 
 </body>
 </html>
-
