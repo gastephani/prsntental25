@@ -1,0 +1,483 @@
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Sarah ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  background-image: url('https://i.pinimg.com/736x/56/d5/ab/56d5ab4df186e46b26ef0c71df6052ff.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: 'Inter', sans-serif;
+}
+
+.overlay {
+  min-height: 100vh;
+  width: 100%;
+  background: radial-gradient(circle at top, rgba(255,255,255,0.05), rgba(0,0,0,0.45));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.login-box {
+  background: rgba(255,255,255,0.4);
+  backdrop-filter: blur(8px);
+  padding: 36px 28px;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 360px;
+  text-align: center;
+  box-shadow: 0 25px 45px rgba(0,0,0,0.25);
+  animation: fadeIn 1.2s ease;
+}
+
+.login-box h1 {
+  font-size: 1.3rem;
+  margin-bottom: 22px;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 13px;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: none;
+  margin-bottom: 16px;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 13px;
+  font-size: 1rem;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, #f2c94c, #f2994a);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.content {
+  display: none;
+  width: 100%;
+  max-width: 820px;
+  background: rgba(255,255,255,0.42);
+  backdrop-filter: blur(8px);
+  border-radius: 28px;
+  padding: 42px 26px 90px;
+  line-height: 1.8;
+  color: #1c1c1c;
+  position: relative;
+  animation: slideUp 1.2s ease;
+  font-family: 'Playfair Display', serif;
+}
+
+.content h2 {
+  text-align: center;
+  margin-bottom: 32px;
+  font-size: 1.7rem;
+}
+
+.content p {
+  margin-bottom: 26px;
+  font-size: 1.08rem;
+  line-height: 1.9;
+  letter-spacing: 0.02em;
+  padding-left: 14px;
+  position: relative;
+}
+
+.content p::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  height: calc(100% - 12px);
+  width: 3px;
+  background: linear-gradient(180deg, #f2c94c, transparent);
+  border-radius: 4px;
+  opacity: 0.6;
+}
+
+.content p:first-of-type::first-letter {
+  float: left;
+  font-size: 3.4rem;
+  margin-right: 10px;
+  margin-top: 6px;
+  font-weight: 600;
+  color: #c89b2c;
+}
+
+.highlight {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin: 46px 0;
+  letter-spacing: 0.08em;
+}
+
+.signature {
+  margin-top: 46px;
+  text-align: right;
+  font-style: italic;
+}
+
+.gift-btn {
+  margin: 42px auto 10px;
+  display: block;
+  padding: 15px 34px;
+  font-size: 1.1rem;
+  border-radius: 40px;
+  border: none;
+  background: linear-gradient(135deg, #f2c94c, #f2994a);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.ticket {
+  display: none;
+  margin-top: 46px;
+  background: rgba(255,255,255,0.65);
+  border-radius: 22px;
+  padding: 28px;
+}
+
+.ticket-photo {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 20px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.ticket-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* AIRBNB SECTION */
+.airbnb-section {
+  display: none;
+  margin-top: 40px;
+  font-family: 'Inter', sans-serif;
+}
+
+.airbnb-section h3 {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #1c1c1c;
+  font-family: 'Playfair Display', serif;
+}
+
+.airbnb-section .sub {
+  text-align: center;
+  font-size: 0.88rem;
+  color: #666;
+  margin-bottom: 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.airbnb-section .sub::before { display: none; }
+.airbnb-section .sub::first-letter { float: none; font-size: inherit; color: inherit; }
+
+.hotel-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.hotel-card {
+  background: rgba(255,255,255,0.8);
+  border-radius: 16px;
+  padding: 18px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hotel-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.14);
+}
+
+.hotel-info { flex: 1; }
+
+.hotel-name {
+  font-size: 0.97rem;
+  font-weight: 600;
+  color: #1c1c1c;
+  margin-bottom: 3px;
+}
+
+.hotel-location {
+  font-size: 0.8rem;
+  color: #888;
+  margin-bottom: 6px;
+}
+
+.hotel-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.badge {
+  font-size: 0.72rem;
+  background: rgba(242,201,76,0.25);
+  color: #7a5c00;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.hotel-right {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.hotel-price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1c1c1c;
+}
+
+.hotel-price-sub {
+  font-size: 0.72rem;
+  color: #999;
+}
+
+.hotel-score {
+  display: inline-block;
+  margin-top: 6px;
+  background: linear-gradient(135deg, #f2c94c, #f2994a);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 8px;
+}
+
+.airbnb-btn {
+  display: block;
+  margin: 22px auto 0;
+  padding: 13px 32px;
+  background: linear-gradient(135deg, #FF5A5F, #FF7E5F);
+  color: #fff;
+  font-size: 0.97rem;
+  font-weight: 700;
+  border-radius: 40px;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(255,90,95,0.35);
+  transition: opacity 0.2s;
+}
+
+.airbnb-btn:hover { opacity: 0.88; }
+
+audio { display: none; }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+<div class="overlay">
+
+<div class="login-box" id="questionBox">
+  <h1 id="question">Qual o nome do seu namorado?</h1>
+  <input type="text" id="answer" placeholder="Digite aqui…">
+  <button onclick="nextQuestion()">Continuar</button>
+</div>
+
+<div class="content" id="content">
+  <h2>Sarah,</h2>
+
+  <p>O Natal sempre me faz pensar no que realmente importa. Não em presentes ou datas, mas nas pessoas que atravessam os nossos dias e deixam tudo mais significativo e pessoas com quem gostaríamos de estar e com as tradições que são criadas.</p>
+
+  <p>Você é assim pra mim. Sua presença soma, traz leveza, faz bem. Mesmo quando a rotina fica corrida, aparecem mil reuniões e entregas ou quando a distância aparece, você continua sendo alguém que eu escolho ter por perto, nem que seja entre um meet e outro.</p>
+
+  <p>Eu gosto muito da forma como a gente tem construido o que temos. Sem pressa, sem cobrança, sem forçar nada. A gente conversa, se entende, ri das coisas, aprende junto, tem cuidado, respeito, segurança e verdade nisso e eu valorizo muito.</p>
+
+  <p>Saiba que com você, os dias ficam mais simples. Não porque tudo muda, mas porque dividir a vida com alguém que faz sentido deixa tudo mais claro. Até as coisas comuns ganham outro peso quando são compartilhadas, um pãozinho na padaria, uma ida no mercado, descer com o tinky.</p>
+
+  <p>Estar com você me faz bem de um jeito tranquilo, não é sobre intensidade o tempo todo (apesar de sabermos como deixar as coisas divertidas) é sobre paz, sobre sentir que estou no lugar certo, vivendo algo que vale a pena e que eu posso colocar energia e esforço pra construir algo sólido.</p>
+
+  <p>Esse ano me ensinou bastante sobre escolhas, escolher estar, escolher cuidar, escolher o que faz bem de verdade. E amar você tem sido isso, uma escolha consciente, tranquila e segura, construída no dia a dia.</p>
+
+  <p>Escolho construir algo de verdade, com as NOSSAS tradições, com o NOSSO jeito de fazer dar certo, dividindo sonhos, objetivos e tudo de mais bonito e sincero que pudermos fazer por NóS.</p>
+
+  <p>Quando você me contou da viagem, eu senti saudade quase que imediatamente, porque realmente estamos em um momento muito gostoso de ser vivido. Mas junto com isso veio uma vontade grande de participar mais do seu mundo.</p>
+
+  <p>Eu não queria apenas ouvir tudo depois ou viver isso à distância. Eu queria poder participar desse momento com você, conhecer tudo sobre de onde veio, as pessoas que são importantes, seus lugares favoritos e tudo que de alguma maneira tornam ai especial para você</p>
+
+  <p>Eu pensei bastante antes de tomar essa decisão e percebi que estar com você é algo que faz sentido agora e que eu quero viver com presença.</p>
+
+  <p>Por isso, nesse Natal, meu presente não é algo que se embrulha e sim o que eu mais gosto de oferecer e receber.</p>
+
+  <div class="highlight">
+    É tempo.<br>
+    É intenção.<br>
+    É escolha.
+  </div>
+
+  <p>E no dia 09 de janeiro, eu vou. Vou pra te encontrar. Pra dividir dias, conversas, momentos simples e reais. Pra viver de perto mais um capítulo da nossa história, do jeito que a gente constrói tudo: com calma, verdade e carinho.</p>
+
+  <p>E se tem algo que eu desejo pra esse Natal, é que você sinta, em cada palavra dessa carta, o quanto você é importante pra mim, o quanto eu faço questão, e o quanto eu escolho você e Tinky, hoje e nos próximos capítulos que a gente ainda vai escrever, porque a gente vai!</p>
+
+  <button class="gift-btn" onclick="document.getElementById('ticket').style.display='block'; document.getElementById('airbnbSection').style.display='block'">Aceitar presente 🎁</button>
+
+  <div class="ticket" id="ticket">
+    <div class="ticket-photo">
+      <img src="ft_presente.jpeg">
+    </div>
+
+    <p><strong>Passageiro:</strong> Gabriel</p>
+    <p><strong>Destino:</strong> (Salvador) Onde Sarah estiver</p>
+    <p><strong>Endereço:</strong> Av. General Severino Filho 712, Apto 911</p>
+    <p><strong>Data:</strong> 09/01/2026</p>
+    <p><strong>Horário de chegada:</strong> 10:00 AM</p>
+    <p><strong>Status:</strong> Confirmado</p>
+
+    <p>Gabriel chegará no dia 09/01/2026 às 10h, estará esperando por Sarah e pelo Tinky 🐾, pronto para dividir dias simples, caminhadas, risadas e presença.</p>
+    <p>Bagagem: carinho, beijos, abraços, massagem, intenção, tempo e MUITA vontade de viver esse momento juntos.</p>
+  </div>
+
+  <!-- AIRBNB / HOSPEDAGEM -->
+  <div class="airbnb-section" id="airbnbSection">
+    <h3>Hospedagens em Salvador</h3>
+    <p class="sub">Opções para a gente explorar juntos 🌊</p>
+
+    <div class="hotel-cards">
+
+      <a class="hotel-card" href="https://www.booking.com/hotel/br/art-studio-incredible-roofop-by-vlv-stays.html?aid=8132308&checkin=2026-07-09&checkout=2026-07-13&no_rooms=1&group_adults=2&selected_currency=BRL" target="_blank">
+        <div class="hotel-info">
+          <div class="hotel-name">Art Studio Incredible Rooftop by VLV Stays</div>
+          <div class="hotel-location">Armação, Salvador</div>
+          <div class="hotel-badges">
+            <span class="badge">Beira-mar</span>
+            <span class="badge">Piscina</span>
+            <span class="badge">Terraço</span>
+          </div>
+        </div>
+        <div class="hotel-right">
+          <div class="hotel-price">R$ 1.200</div>
+          <div class="hotel-price-sub">4 noites</div>
+          <div class="hotel-score">9.3 ★</div>
+        </div>
+      </a>
+
+      <a class="hotel-card" href="https://www.booking.com/hotel/br/salvador-rio-vermelho.html?aid=8132308&checkin=2026-07-09&checkout=2026-07-13&no_rooms=1&group_adults=2&selected_currency=BRL" target="_blank">
+        <div class="hotel-info">
+          <div class="hotel-name">Mercure Salvador Rio Vermelho</div>
+          <div class="hotel-location">Rio Vermelho, Salvador</div>
+          <div class="hotel-badges">
+            <span class="badge">Spa</span>
+            <span class="badge">Massagem para casais</span>
+            <span class="badge">Piscina beira-mar</span>
+          </div>
+        </div>
+        <div class="hotel-right">
+          <div class="hotel-price">R$ 1.798</div>
+          <div class="hotel-price-sub">4 noites</div>
+          <div class="hotel-score">8.5 ★</div>
+        </div>
+      </a>
+
+      <a class="hotel-card" href="https://www.booking.com/hotel/br/fera-palace.html?aid=8132308&checkin=2026-07-09&checkout=2026-07-13&no_rooms=1&group_adults=2&selected_currency=BRL" target="_blank">
+        <div class="hotel-info">
+          <div class="hotel-name">Fera Palace Hotel</div>
+          <div class="hotel-location">Centro Histórico, Salvador</div>
+          <div class="hotel-badges">
+            <span class="badge">5 estrelas</span>
+            <span class="badge">Piscina infinita</span>
+            <span class="badge">Terraço</span>
+          </div>
+        </div>
+        <div class="hotel-right">
+          <div class="hotel-price">R$ 5.541</div>
+          <div class="hotel-price-sub">4 noites</div>
+          <div class="hotel-score">8.9 ★</div>
+        </div>
+      </a>
+
+    </div>
+
+    <a class="airbnb-btn" href="https://www.airbnb.com.br/s/Salvador--Bahia/homes?adults=2&checkin=2026-01-09&checkout=2026-01-13" target="_blank">
+      Ver mais no Airbnb
+    </a>
+  </div>
+
+  <div class="signature">
+    Com carinho,<br>
+    Seu Gabriel.
+  </div>
+</div>
+
+<audio id="bgMusic" loop>
+  <source src="msc.mp3" type="audio/mpeg">
+</audio>
+
+</div>
+
+<script>
+let step = 0;
+const questions = [
+  "Qual o nome do seu namorado?",
+  "Qual foi o dia mais importante do ano para nós?",
+  "Qual o meu suco favorito?",
+  "Que ano será o nosso primeiro Natal e réveillon juntos?"
+];
+
+function normalize(t) {
+  return t.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+}
+
+function nextQuestion() {
+  const v = normalize(document.getElementById("answer").value);
+
+  if (
+    (step === 0 && v.includes("gabriel")) ||
+    (step === 1 && v.includes("11")) ||
+    (step === 2 && v.includes("maracu")) ||
+    (step === 3 && v === "2026")
+  ) {
+    step++;
+    document.getElementById("answer").value = "";
+
+    if (step < questions.length) {
+      document.getElementById("question").innerText = questions[step];
+    } else {
+      document.getElementById("questionBox").style.display = "none";
+      document.getElementById("content").style.display = "block";
+      const music = document.getElementById("bgMusic");
+      music.volume = 0.6;
+      music.play();
+    }
+  } else {
+    alert("Pensa com carinho 💛");
+  }
+}
+</script>
+
+</body>
+</html>
